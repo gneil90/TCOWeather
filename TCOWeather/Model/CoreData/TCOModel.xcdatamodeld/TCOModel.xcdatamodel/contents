@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15A284" minimumToolsVersion="Xcode 7.0">
+    <entity name="TCOCity" representedClassName="TCOCity" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="conditions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TCOCondition" inverseName="city" inverseEntity="TCOCondition" syncable="YES"/>
+    </entity>
+    <entity name="TCOCondition" representedClassName="TCOCondition" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="humidity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id_" optional="YES" attributeType="Integer 64" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="locationName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="main" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sunrise" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="sunset" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="temperature" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tempHigh" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tempLow" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="weather_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="windBearing" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="windSpeed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TCOCity" inverseName="conditions" inverseEntity="TCOCity" syncable="YES"/>
+    </entity>
+    <entity name="TCOUserSettings" representedClassName="TCOUserSettings" syncable="YES">
+        <attribute name="locationName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TCOCity" positionX="-252" positionY="32" width="128" height="73"/>
+        <element name="TCOCondition" positionX="34" positionY="-106" width="128" height="268"/>
+        <element name="TCOUserSettings" positionX="-90" positionY="36" width="128" height="60"/>
+    </elements>
+</model>
