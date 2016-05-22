@@ -14,5 +14,6 @@
 @implementation TCOUserSettings (CoreDataProperties)
 
 @dynamic locationName;
+@dynamic lastKnownLocation;
 
 @end

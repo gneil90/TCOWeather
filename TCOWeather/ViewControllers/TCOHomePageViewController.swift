@@ -84,15 +84,23 @@ class TCOHomePageViewController: TCOBaseViewController {
   }
   
   func handleCurrentWeatherResponse(success:Bool, results:RKMappingResult?) {
+    let settings = TCOUserSettings.sharedSettingsInContext(ctx)
     if success {
       if let condition = results!.firstObject as? TCOCondition {
+        if TCOSettingsLocationMy == settings.locationName!  {
+          settings.lastKnownLocation = condition.locationName
+        }
         self.currentCondition = condition
       }
     } else {
-      let settings = TCOUserSettings.sharedSettingsInContext(ctx)
-      
-      if let name = settings.locationName {
-        if let result = TCOCondition.TCO_findFirstWithPredicate(NSPredicate(format:"locationName ==[c] %@", name), sortDescriptors: [NSSortDescriptor(key:"date", ascending: true)], inContext: ctx) as? TCOCondition {
+      var name = settings.locationName;
+      if TCOSettingsLocationMy == settings.locationName!  {
+        if let lastKnownLocation = settings.lastKnownLocation {
+          name = lastKnownLocation;
+        }
+      }
+      if name != nil  {
+        if let result = TCOCondition.TCO_findFirstWithPredicate(NSPredicate(format:"locationName ==[c] %@ AND date <= %@", name!, NSDate()), sortDescriptors: [NSSortDescriptor(key:"date", ascending: false)], inContext: ctx) as? TCOCondition {
           currentCondition = result
         }
       }

@@ -22,11 +22,12 @@
         <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TCOCity" inverseName="conditions" inverseEntity="TCOCity" syncable="YES"/>
     </entity>
     <entity name="TCOUserSettings" representedClassName="TCOUserSettings" syncable="YES">
+        <attribute name="lastKnownLocation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="locationName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="TCOCity" positionX="-252" positionY="32" width="128" height="73"/>
         <element name="TCOCondition" positionX="34" positionY="-106" width="128" height="268"/>
-        <element name="TCOUserSettings" positionX="-90" positionY="36" width="128" height="60"/>
+        <element name="TCOUserSettings" positionX="-90" positionY="36" width="128" height="75"/>
     </elements>
 </model>

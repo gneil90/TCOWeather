@@ -35,6 +35,7 @@
 		D02C00DD1CF0FC6D00B2989C /* DefaultCityList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D02C00DC1CF0FC6D00B2989C /* DefaultCityList.plist */; };
 		D07CE4581CF103F5004E1048 /* TCONewCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07CE4571CF103F5004E1048 /* TCONewCityViewController.swift */; };
 		D07CE45B1CF10F0B004E1048 /* UIView+Parallax.m in Sources */ = {isa = PBXBuildFile; fileRef = D07CE45A1CF10F0B004E1048 /* UIView+Parallax.m */; };
+		D07CE45D1CF1317E004E1048 /* TCOUserSettings+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D07CE45C1CF1317E004E1048 /* TCOUserSettings+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		D07CE4571CF103F5004E1048 /* TCONewCityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TCONewCityViewController.swift; path = ViewControllers/TCONewCityViewController.swift; sourceTree = "<group>"; };
 		D07CE4591CF10F0B004E1048 /* UIView+Parallax.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Parallax.h"; path = "Category/UIView+Parallax.h"; sourceTree = "<group>"; };
 		D07CE45A1CF10F0B004E1048 /* UIView+Parallax.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Parallax.m"; path = "Category/UIView+Parallax.m"; sourceTree = "<group>"; };
+		D07CE45C1CF1317E004E1048 /* TCOUserSettings+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TCOUserSettings+CoreDataProperties.m"; path = "Model/CoreData/Entity/TCOUserSettings+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +229,7 @@
 				D02C00CE1CF0F12A00B2989C /* TCOUserSettings+CoreDataProperties.h */,
 				D02C00D21CF0F12A00B2989C /* TCOCity+CoreDataProperties.h */,
 				D02C00D31CF0F12A00B2989C /* TCOCity+CoreDataProperties.m */,
+				D07CE45C1CF1317E004E1048 /* TCOUserSettings+CoreDataProperties.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				D02C00D91CF0F12A00B2989C /* TCOCity.m in Sources */,
 				D02C00CD1CF0E2A300B2989C /* TCOWeatherDateFormatter.m in Sources */,
 				D02C00C51CF0C96A00B2989C /* TCOBaseTableViewCell.swift in Sources */,
+				D07CE45D1CF1317E004E1048 /* TCOUserSettings+CoreDataProperties.m in Sources */,
 				D02C00C11CF0C4D500B2989C /* TCOForecastViewController.swift in Sources */,
 				D02C00BF1CF0BF5C00B2989C /* String+TCOMethod.swift in Sources */,
 				D02C00DB1CF0F73900B2989C /* TCOCityListViewController.swift in Sources */,

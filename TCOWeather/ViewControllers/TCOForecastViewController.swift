@@ -57,7 +57,7 @@ class TCOForecastViewController: TCOBaseViewController, UITableViewDelegate, UIT
         city?.addConditions(Set(conditions))
         
         for object in self.forecast {
-          print(object.city?.name)
+          object.locationName = city?.name
         }
       }
     } else {

@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TCOUserSettings (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSString *locationName;
+@property (nullable, nonatomic, retain) NSString *lastKnownLocation;
 
 @end
 

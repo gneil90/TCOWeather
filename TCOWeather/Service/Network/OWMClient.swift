@@ -150,21 +150,24 @@ class OWMClient: NSObject {
     
     //Current weather mapping
     
-    let conditionMapping = client.createConditionMapping(managedObjectStore)
+    let conditionMapping = client.createConditionMapping(managedObjectStore, includeUnique: true)
     let currentWeatherResponseDescriptor = RKResponseDescriptor(mapping: conditionMapping, method: .GET, pathPattern: "/data/2.5/weather", keyPath: nil, statusCodes: RKStatusCodeIndexSetForClass(.Successful))
     objectManager.addResponseDescriptor(currentWeatherResponseDescriptor)
 
     //hourly forecast mapping
     
-    let hourlyForecastMapping = client.createConditionMapping(managedObjectStore)
+    let hourlyForecastMapping = client.createConditionMapping(managedObjectStore, includeUnique: false)
+
     let hourlyForecastResponseDescriptor = RKResponseDescriptor(mapping: hourlyForecastMapping, method: .GET, pathPattern: "/data/2.5/forecast", keyPath: "list", statusCodes: RKStatusCodeIndexSetForClass(.Successful))
     objectManager.addResponseDescriptor(hourlyForecastResponseDescriptor)
   }
   
 
-  func createConditionMapping(managedObjectStore:RKManagedObjectStore) -> RKEntityMapping {
+  func createConditionMapping(managedObjectStore:RKManagedObjectStore, includeUnique:Bool) -> RKEntityMapping {
     let conditionMapping = RKEntityMapping(forEntityForName: "TCOCondition", inManagedObjectStore: managedObjectStore)
-    conditionMapping.identificationAttributes = ["id_", "date"]
+    if includeUnique {
+      conditionMapping.identificationAttributes = ["id_", "date"];
+    }
     conditionMapping.addAttributeMappingsFromDictionary(["main.humidity":"humidity", "id":"id_", "name": "locationName", "sys.sunrise" : "sunrise", "sys.sunset" : "sunset", "wind.deg":"windBearing", "wind.speed" : "windSpeed"])
     
     let dateMappingAttribute = RKAttributeMapping(fromKeyPath: "dt", toKeyPath: "date");
